@@ -20,6 +20,9 @@ canvas{display:block;width:100%;height:100%;touch-action:none}
 </head>
 <body>
 <canvas id="c"></canvas>
-<script src="game.js"></script>
+<script>
+Promise.all([0,1,2,3,4].map(i=>fetch("b64-"+i+".txt").then(r=>r.text())))
+.then(p=>{const s=document.createElement("script");s.textContent=atob(p.join(""));document.body.appendChild(s);});
+</script>
 </body>
 </html>
