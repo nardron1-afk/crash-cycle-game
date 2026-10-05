@@ -19,7 +19,7 @@ canvas{display:block;width:100%;height:100%;touch-action:none}
 <canvas id="c"></canvas>
 <script>
 Promise.all(["p0.js","p1.js","p2.js","p3.js","p4.js","p5.js","p6.js","p7.js"].map(f=>fetch(f).then(r=>r.text())))
-.then(p=>{const s=document.createElement("script");s.textContent=p.join("");document.body.appendChild(s);});
+.then(p=>{const s=document.createElement("script");s.textContent=atob(p.join(""));document.body.appendChild(s);});
 </script>
 </body>
 </html>
